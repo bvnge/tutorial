@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="X-UA-Compatible" content="ie-edge">
+        <title>CALCULATOR</title>
+        <style>
+            .bg{
+            background-color:rgb(15, 228, 97);
+            background-size:cover;
+            height:100vh;
+            text-align:center;
+            padding:50px;
+            }
+            .card{
+                 height:500px;
+                 width:500px; 
+                 border-style:groove;
+                 border-width:8px;
+                 border-radius:10px;
+                 border-color:black;  
+                 margin-left:350px;      
+                 padding:20px;    
+                 background-color:blue;
+            }
+            .user-input{
+                padding:10px;
+                width:450px;
+                border-width:8px;
+                border-style:solid;
+                border-color:black;
+                text-align:right;
+                font-size:25px;
+                font-weight:bold;
+            }
+            .button{
+                border-radius:100px;
+                font-size:30px;
+                margin-top:20px;
+                font-weight:bolder;
+                padding:10px;
+                border-color:black;
+                border-width:4px;
+                border-style:solid;
+                margin-right:20px;
+                cursor: pointer;
+                height:65px;
+                width:80px;
+                text-align:center;
+            }
+            .button1{
+                border-radius:100px;
+                font-size:30px;
+                margin-top:20px;
+                font-weight:bolder;
+                padding:10px;
+                border-color:black;
+                border-width:4px;
+                border-style:solid;
+                margin-right:20px;
+                cursor: pointer;
+                height:65px;
+                width:80px;
+                text-align:center;
+                background-color:rgb(15, 228, 97);
+                color:white;
+            }
+            button:hover{
+                    background-color:blue;
+            }
+            h1:hover{
+                color:blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg">
+        <h1 style="text-align:center;margin:auto;margin-bottom:20px;">CALCULATOR</h1>
+        <div class="card">
+                   <input type="text" class="user-input" placeholder='0' id="userInput">
+                   <br/>
+                   <button class="button" onclick="Clear()">AC</button>
+                   <button class="button" onclick="delClick()">DEL</button>
+                   <button class="button" onclick="display('%')">%</button>
+                   <button class="button" onclick="display('/')">/</button>
+                   <br/>
+                   <button class="button" onclick="display('7')">7</button>
+                   <button class="button" onclick="display('8')">8</button>
+                   <button class="button" onclick="display('9')">9</button>
+                   <button class="button" onclick="display('*')">*</button>
+                   <br/>
+                   <button class="button" onclick="display('4')">4</button>
+                   <button class="button" onclick="display('5')">5</button>
+                   <button class="button" onclick="display('6')">6</button>
+                   <button class="button" onclick="display('-')">-</button>
+                   <br/>
+                   <button class="button" onclick="display('1')">1</button>
+                   <button class="button" onclick="display('2')">2</button>
+                   <button class="button" onclick="display('3')">3</button>
+                   <button class="button" onclick="display('+')">+</button>
+                   <br/>
+                   <button class="button" onclick="display('00')">00</button>
+                   <button class="button" onclick="display('0')">0</button>
+                   <button class="button" onclick="display('.')">.</button>
+                   <button class="button1" onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script>
+           let userE1=document.getElementById("userInput");
+           function display(num){
+            userE1.value += num;
+           }
+           function calculate(){
+            try{
+            userE1.value=eval(userE1.value);
+            }
+            catch(err){
+                alert("Invalid input");
+            }
+           }
+           function Clear(){
+            userE1.value="";
+           }
+           function delClick(){
+            userE1.value=userE1.value.slice(0,-1);
+           }
+    </script>
+    </body>
+</html>
